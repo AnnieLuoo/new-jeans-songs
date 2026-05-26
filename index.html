@@ -11,18 +11,10 @@
 
 <body>
   <main id="app">
-    <h1>
-      <span class="letter" style="color: #ff69b4;">N</span><span class="letter" style="color: #ff1493;">e</span><span class="letter" style="color: #ff69b4;">w</span>
-      <span class="letter" style="color: #ff1493;"> </span>
-      <span class="letter" style="color: #ff69b4;">J</span><span class="letter" style="color: #ff1493;">e</span><span class="letter" style="color: #ff69b4;">a</span><span class="letter" style="color: #ff1493;">n</span><span class="letter" style="color: #ff69b4;">s</span>
-      <span class="letter" style="color: #ff1493;"> </span>
-      <span class="letter" style="color: #ff69b4;">S</span><span class="letter" style="color: #ff1493;">o</span><span class="letter" style="color: #ff69b4;">n</span><span class="letter" style="color: #ff1493;">g</span>
-      <span class="letter" style="color: #ff69b4;"> </span>
-      <span class="letter" style="color: #ff1493;">G</span><span class="letter" style="color: #ff69b4;">e</span><span class="letter" style="color: #ff1493;">n</span><span class="letter" style="color: #ff69b4;">e</span><span class="letter" style="color: #ff1493;">r</span><span class="letter" style="color: #ff69b4;">a</span><span class="letter" style="color: #ff1493;">t</span><span class="letter" style="color: #ff69b4;">o</span><span class="letter" style="color: #ff1493;">r</span>
-    </h1>
+    <h1 id="colorfulTitle"></h1>
     <div id="coverContainer">
-      <img id="danielleSticker" src="graphics/Cd%20Danielle%20Sticker%20(1).gif" alt="Danielle sticker" />
       <img id="trackCover" src="" alt="Album cover" />
+      <img id="danielleSticker" src="graphics/Cd%20Danielle%20Sticker%20(1).gif" alt="Danielle sticker" />
     </div>
     <p id="trackName">No track selected</p>
     <div id="status" aria-live="polite" style="margin-top:8px;font-size:13px;opacity:0.9"></div>
@@ -35,6 +27,36 @@
     <audio id="myAudio" preload="auto"></audio>
   </main>
 
+  <script>
+    const pastelColors = [
+      '#FFB3BA', '#FFCCCB', '#FFDFBA', '#FFFFBA', '#BAFFC9',
+      '#BAE1FF', '#E0BBE4', '#D5AAFF', '#FFC8DD', '#B5EAD7',
+      '#C1FFD7', '#FFE5B4', '#FFDAB9', '#FFB6C1', '#DDA0DD'
+    ];
+
+    function getRandomPastelColor() {
+      return pastelColors[Math.floor(Math.random() * pastelColors.length)];
+    }
+
+    function colorizeTitle() {
+      const title = 'New Jeans Song Generator';
+      const titleEl = document.getElementById('colorfulTitle');
+      titleEl.innerHTML = '';
+      
+      for (let char of title) {
+        const span = document.createElement('span');
+        span.textContent = char;
+        span.style.color = getRandomPastelColor();
+        titleEl.appendChild(span);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', colorizeTitle);
+    } else {
+      colorizeTitle();
+    }
+  </script>
   <script src="index.js"></script>
 </body>
 
