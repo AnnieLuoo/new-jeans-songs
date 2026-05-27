@@ -25,8 +25,12 @@ h1 {
   text-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
+
 .letter {
   display: inline;
+}
+#colorfulTitle {
+  color: #fff;
 }
 
 #coverContainer {
