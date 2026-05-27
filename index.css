@@ -406,6 +406,17 @@ h1 {
     transition: background-color 0.15s ease, transform 0.12s ease;
 }
 
+#playBtn, #randomBtn {
+  font-family: 'Fredoka One', cursive;
+  color: #fff;
+}
+
+#trackName {
+  font-family: 'Fredoka One', cursive;
+  font-weight: bold;
+  color: #fff;
+}
+
 #playBtn:hover, #randomBtn:hover {
     background-color: #ffbcc9;
     transform: translateY(-2px);
