@@ -57,7 +57,7 @@ function initPlayer() {
   });
   audio.addEventListener('stalled', () => { if (statusEl) statusEl.textContent = 'Stalled while loading'; });
   audio.addEventListener('suspend', () => { if (statusEl) statusEl.textContent = 'Playing'; });
-  audio.addEventListener('canplaythrough', () => { if (statusEl) statusEl.textContent = 'Ready to play'; });
+  audio.addEventListener('canplaythrough', () => { if (statusEl) statusEl.textContent = 'Playing'; });
 
   function tryPlay() {
     return audio.play().then(() => {
@@ -130,7 +130,7 @@ function initSidebar() {
   const tracks = [
     'Attention', 'Hype Boy', 'Cookie', 'Hurt', 'Ditto',
     'OMG', 'Super Shy', 'New Jeans', 'Get Up', 'Cool With You',
-    'ETA', 'ASAP', 'How Sweet', 'Bubble Gum', 'Supernatural', 'Right Now'
+    'ETA', 'ASAP', 'How Sweet', 'Bubble Gum', 'Supernatural', 'Right Now','Rewind'
   ];
 
   const sidebar      = document.getElementById('sidebar');
