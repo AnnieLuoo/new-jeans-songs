@@ -10,7 +10,7 @@
 </head>
 <body>
   <main id="app">
-    <h1 id="colorfulTitle"></h1>
+    <h1 id="colorfulTitle">New Jeans</h1>
     <div id="coverContainer">
       <img id="trackCover" src="" alt="Album cover" />
       <img id="danielleSticker" src="graphics/spinning%20cd.gif" alt="Danielle sticker" />
@@ -29,28 +29,6 @@
     <h2>Songs Avaliable</h2>
     <div id="sidebarList"></div>
   </nav>
-  <script>
-    function colorizeTitle() {
-      const title = 'New Jeans Song Generator';
-      const titleEl = document.getElementById('colorfulTitle');
-      titleEl.innerHTML = '';
-
-      const pink = '#FF85A1';
-      const lightPink = '#FFD6E0';
-
-      for (let i = 0; i < title.length; i++) {
-        const span = document.createElement('span');
-        span.textContent = title[i];
-        span.style.color = i % 2 === 0 ? pink : lightPink;
-        titleEl.appendChild(span);
-      }
-    }
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', colorizeTitle);
-    } else {
-      colorizeTitle();
-    }
-  </script>
   <script src="index.js"></script>
 </body>
 </html>
