@@ -435,7 +435,9 @@ h1 {
   backdrop-filter: blur(8px);
   border-radius: 20px;
   padding: 6px 20px;
-  display: inline-block;
+  display: block;
+  margin: 0 auto 8px auto;
+  width: fit-content;
 }
 
 #playBtn:hover, #randomBtn:hover {
