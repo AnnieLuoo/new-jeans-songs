@@ -58,8 +58,8 @@ h1 {
 }
 
 #danielleSticker {
-  width: 180px;
-  height: 180px;
+  width: 200px;
+  height: 200px;
   position: absolute;
   right: 0;
   z-index: 3;
@@ -453,7 +453,7 @@ h1 {
 }
 
 #sidebar h2 {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Fredoka One', cursive;
   font-size: 15px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -473,7 +473,7 @@ h1 {
   transition: background 0.18s ease;
   font-family: 'Josefin Sans', sans-serif;
   font-size: 14px;
-  color: #3a2a3a;
+  color: #ffffff;
   font-weight: 600;
 }
 
