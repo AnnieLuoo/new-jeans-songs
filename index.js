@@ -15,6 +15,10 @@ function initPlayer() {
     {src: 'assets/SpoMp3 Right Now NewJeans.mp3', label: 'Right Now', cover: 're/supernatural.png', bg: 'linear-gradient(180deg, #dff2ef 0%, #eaf9f7 100%)'},
     {src: 'assets/SpoMp3 Super Shy NewJeans.mp3', label: 'Super Shy', cover: 're/super shy.png', bg: 'linear-gradient(180deg, #f8e0ff 0%, #fff4ff 100%)'},
     {src: 'assets/SpoMp3 Supernatural NewJeans.mp3', label: 'Supernatural', cover: 're/supernatural.png', bg: 'linear-gradient(180deg, #e2f7ff 0%, #f3f9ff 100%)'}
+    {src: 'assets/how_sweet.mp3', label: 'How Sweet', cover: 're/how sweet.png', bg: 'linear-gradient(180deg, #ffe0f0 0%, #fff5fa 100%)'},
+    {src: 'assets/hurt.mp3', label: 'Hurt', cover: 're/bunny green.png', bg: 'linear-gradient(180deg, #e8d5ff 0%, #f5eeff 100%)'},
+    {src: 'assets/cookie.mp3', label: 'Cookie', cover: 're/bunny blue.png', bg: 'linear-gradient(180deg, #fff3d6 0%, #fff9ec 100%)'},
+    {src: 'assets/attention.mp3', label: 'Attention', cover: 're/bunny blue.png', bg: 'linear-gradient(180deg, #d6f0ff 0%, #eef8ff 100%)'},
   ];
 
   let currentSongIndex = null;
