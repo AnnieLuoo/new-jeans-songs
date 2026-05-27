@@ -5,7 +5,7 @@ function initPlayer() {
     {src: 'assets/SpoMp3 ASAP NewJeans.mp3', label: 'ASAP', cover: 're/super shy.png', bg: 'linear-gradient(180deg, #e2d2ff 0%, #f6e9ff 100%)'},
     {src: 'assets/SpoMp3 Bubble Gum NewJeans.mp3', label: 'Bubble Gum', cover: 're/how sweet.png', bg: 'linear-gradient(180deg, #fff1d8 0%, #ffe8f0 100%)'},
     {src: 'assets/SpoMp3 Cool With You NewJeans.mp3', label: 'Cool With You', cover: 're/super shy.png', bg: 'linear-gradient(180deg, #dbe9ff 0%, #f7f0ff 100%)'},
-    {src: 'assets/SpoMp3 Ditto NewJeans.mp3', label: 'Ditto', cover: 're/super shy.png', bg: 'linear-gradient(180deg, #f7e5ff 0%, #ffe6f2 100%)'},
+    {src: 'assets/SpoMp3 Ditto NewJeans.mp3', label: 'Ditto', cover: 're/bunny red.png', bg: 'linear-gradient(180deg, #f7e5ff 0%, #ffe6f2 100%)'},
     {src: 'assets/SpoMp3 ETA NewJeans.mp3', label: 'ETA', cover: 're/super shy.png', bg: 'linear-gradient(180deg, #d6f2ff 0%, #effbff 100%)'},
     {src: 'assets/SpoMp3 Get Up NewJeans.mp3', label: 'Get Up', cover: 're/super shy.png', bg: 'linear-gradient(180deg, #ffe6d6 0%, #fff5ec 100%)'},
     {src: 'assets/SpoMp3 Hype Boy NewJeans.mp3', label: 'Hype Boy', cover: 're/bunny blue.png', bg: 'linear-gradient(180deg, #d8f3ff 0%, #f0fbff 100%)'},
@@ -53,7 +53,7 @@ function initPlayer() {
     if (statusEl) statusEl.textContent = 'Audio error: code=' + (err && err.code) + ' readyState=' + audio.readyState;
   });
   audio.addEventListener('stalled', () => { if (statusEl) statusEl.textContent = 'Stalled while loading'; });
-  audio.addEventListener('suspend', () => { if (statusEl) statusEl.textContent = 'Loading suspended'; });
+  audio.addEventListener('suspend', () => { if (statusEl) statusEl.textContent = 'Playing'; });
   audio.addEventListener('canplaythrough', () => { if (statusEl) statusEl.textContent = 'Ready to play'; });
 
   function tryPlay() {
@@ -125,9 +125,9 @@ if (document.readyState === 'loading') {
 
 function initSidebar() {
   const tracks = [
-    'Rewind', 'ASAP', 'Bubble Gum', 'Cool With You', 'Ditto',
-    'ETA', 'Get Up', 'Hype Boy', 'New Jeans', 'OMG',
-    'Rewind (Wonder Girls)', 'Right Now', 'Super Shy', 'Supernatural'
+    'Attention', 'Hype Boy', 'Cookie', 'Hurt', 'Ditto',
+    'OMG', 'Super Shy', 'New Jeans', 'Get Up', 'Cool With You',
+    'ETA', 'ASAP', 'How Sweet', 'Bubble Gum', 'Supernatural', 'Right Now'
   ];
 
   const sidebar      = document.getElementById('sidebar');
