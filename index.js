@@ -121,3 +121,73 @@ if (document.readyState === 'loading') {
   // DOM already ready
   initPlayer();
 }
+// ===== SIDEBAR & CLICKABLE COVER =====
+
+function initSidebar() {
+  const tracks = [
+    'Rewind', 'ASAP', 'Bubble Gum', 'Cool With You', 'Ditto',
+    'ETA', 'Get Up', 'Hype Boy', 'New Jeans', 'OMG',
+    'Rewind (Wonder Girls)', 'Right Now', 'Super Shy', 'Supernatural'
+  ];
+
+  const sidebar      = document.getElementById('sidebar');
+  const toggle       = document.getElementById('sidebarToggle');
+  const overlay      = document.getElementById('sidebarOverlay');
+  const list         = document.getElementById('sidebarList');
+  const trackCover   = document.getElementById('trackCover');
+
+  // Build the song list
+  tracks.forEach((name, i) => {
+    const item = document.createElement('div');
+    item.className = 'sidebar-track';
+    item.dataset.index = i;
+    item.innerHTML = `<span class="sidebar-track-num">${i + 1}</span>${name}`;
+    item.addEventListener('click', () => {
+      // Play the selected track using the existing playTrack global
+      if (typeof playTrack === 'function') {
+        playTrack(i);
+      }
+      // Mark active
+      document.querySelectorAll('.sidebar-track').forEach(el => el.classList.remove('active'));
+      item.classList.add('active');
+      // Close sidebar on mobile
+      if (window.innerWidth < 700) closeSidebar();
+    });
+    list.appendChild(item);
+  });
+
+  // Sync active state when track changes via other buttons
+  const audio = document.getElementById('myAudio');
+  if (audio) {
+    audio.addEventListener('play', () => {
+      const trackName = document.getElementById('trackName')?.textContent;
+      document.querySelectorAll('.sidebar-track').forEach(el => {
+        el.classList.toggle('active', el.textContent.trim().replace(/^\d+/, '').trim() === trackName);
+      });
+    });
+  }
+
+  // Toggle open/close
+  function openSidebar()  { sidebar.classList.add('open');  overlay.classList.add('visible'); }
+  function closeSidebar() { sidebar.classList.remove('open'); overlay.classList.remove('visible'); }
+
+  toggle.addEventListener('click', () => {
+    sidebar.classList.contains('open') ? closeSidebar() : openSidebar();
+  });
+  overlay.addEventListener('click', closeSidebar);
+
+  // Clickable album cover → Wikipedia
+  if (trackCover) {
+    trackCover.addEventListener('click', () => {
+      window.open('https://en.wikipedia.org/wiki/NewJeans', '_blank', 'noopener');
+    });
+    trackCover.title = 'Learn more about NewJeans on Wikipedia';
+  }
+}
+
+// Run after DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSidebar);
+} else {
+  initSidebar();
+}
